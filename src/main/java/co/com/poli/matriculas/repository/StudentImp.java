@@ -36,7 +36,7 @@ public class StudentImp implements StudentInt {
     @Override
     public Student updateStudent(Student student) {
         StudentData.getStudents().set(StudentData.getStudents().indexOf(student), student);
-        return null;
+        return StudentData.getStudents().get(StudentData.getStudents().indexOf(student));
     }
 
 }
