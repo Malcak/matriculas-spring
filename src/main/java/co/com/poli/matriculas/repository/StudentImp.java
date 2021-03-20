@@ -20,4 +20,23 @@ public class StudentImp implements StudentInt {
         StudentData.setStudents(students);
         return student;
     }
+
+    @Override
+    public Student findByStudentID(Long id) {
+        return StudentData.getStudents().get(StudentData.getStudents().indexOf(new Student(id)));
+    }
+
+    @Override
+    public Student deleteStudent(Long id) {
+        Student student = findByStudentID(id);
+        StudentData.getStudents().remove(StudentData.getStudents().indexOf(student));
+        return student;
+    }
+
+    @Override
+    public Student updateStudent(Student student) {
+        StudentData.getStudents().set(StudentData.getStudents().indexOf(student), student);
+        return null;
+    }
+
 }
